@@ -62,3 +62,16 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.table > * > tr > * {
+   
+    
+}
+
+.table {
+    justify-content: space-between
+}
+
+.invisible {
+    visibility: hidden;
+}
