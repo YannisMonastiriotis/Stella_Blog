@@ -1,0 +1,28 @@
+﻿@page "/learnBlazor/bindProp"
+@using Stell_Blog_Models.LearnBlazorModels
+<h3>BindProp</h3>
+
+Name: @Product.Name<br />
+Active: @Product.IsActive<br />
+Price: @Product.Price<br />
+@{
+    string checkActivity = Product.IsActive ? "Active" : "InActive";
+}
+This Product is:  @checkActivity
+<br />
+<br />
+@checkActivity
+<input type="checkbox" @bind-value="@Product.IsActive" checked="true" />@*@bind-value:event="oninput"*@ @*This is not needed it IS by default*@
+<br />
+Price: 
+<input type="number" @bind-value="@Product.Price" />@*@bind-value:event="oninput"*@ @*This is not needed it IS by default*@
+
+@code {
+    Demo_Product Product = new()
+    {
+        Id = 1,
+        Name = "Rose Candle",
+        IsActive = true,
+        Price = 10.99
+    };
+}
