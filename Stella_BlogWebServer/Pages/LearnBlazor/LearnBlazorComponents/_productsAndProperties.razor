@@ -1,0 +1,33 @@
+﻿<h4 class="text-secondary">Product - @Product.Id</h4>
+<input type="checkbox" @onchange="FavoriteUpdated" /> Add to Favorite
+<br />
+<br />
+    
+<br />
+Name - @Product.Name<br/>
+            Show Properties:
+<input type="checkbox"  @bind="@Product.IsActive" />
+@if (Product.IsActive)
+{
+    @foreach (var propert in Product.ProductProperties)
+    {
+        <div>
+            @propert.Key -  @propert.Value<br /><br />
+        </div>
+    }
+}
+<div>
+    <_EditDeleteButton IsActive="@Product.IsActive"></_EditDeleteButton>
+</div>
+@code {
+    [Parameter]
+    public Demo_Product Product { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnFavoriteUpdated { get; set; }
+
+    private async Task FavoriteUpdated(ChangeEventArgs e)
+    {
+        await OnFavoriteUpdated.InvokeAsync((bool)e.Value);
+    }
+}

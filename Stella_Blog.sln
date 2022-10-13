@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_BlogWebServer", "Stella_BlogWebServer\Stella_BlogWebServer.csproj", "{B57FC30A-4F6A-4C7A-A284-0DBD4C93F254}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stella_BlogWebClient", "Stella_BlogWebClient\Stella_BlogWebClient.csproj", "{E0C92423-1CD0-4AE0-B033-553F97B9E71B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_BlogWebClient", "Stella_BlogWebClient\Stella_BlogWebClient.csproj", "{E0C92423-1CD0-4AE0-B033-553F97B9E71B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stell_Blog_Models", "Stell_Blog_Models\Stell_Blog_Models.csproj", "{F1CA53E8-4CAA-4540-B83D-3AF17CADD263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stell_Blog_Models", "Stell_Blog_Models\Stell_Blog_Models.csproj", "{F1CA53E8-4CAA-4540-B83D-3AF17CADD263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
