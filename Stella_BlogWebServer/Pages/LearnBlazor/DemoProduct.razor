@@ -1,26 +1,29 @@
-﻿@page   "/learnBlazor/demoproduct"
+﻿@page "/learnBlazor/demoproduct"
 
 
-<h2 class="text-primary">Demo Product</h2>
+<h2 class="text-primary"> Demo Product</h2>
 <p>Favourites Total: @SelectedFavouriteCount</p>
+<br />
+<p>Last Selected Product: @SelectedProduct </p>
 <div class="row" style="margin:0.5%;padding:0.4%;border:groove;background-color:azure;border-color:black;border-style:ridge">
-    @foreach(var produck in Products)
+    @foreach (var produck in Products)
 
     {
-        <div class="col-5 border p-2 bg-light"  style="border:dashed;border:solid;background-color:lightgray;border-color:lightskyblue">
-            <div style="margin-block:0.2%;">
-                <_productsAndProperties Product="produck" OnFavoriteUpdated="FavoriteCountUpdate"></_productsAndProperties>
-    
-   
-        </div>
-        </div>
-      
+
+        <_productsAndProperties Product="produck" OnFavoriteUpdated="FavoriteCountUpdate"
+                            OnLastSelectedProductChange="ShowNameOfSelectedProduct"></_productsAndProperties>
+
+
+
     }
 </div>
 
 @code {
     List<Demo_Product> Products = new();
     private int SelectedFavouriteCount { get; set; } = 0;
+
+    private string SelectedProduct { get; set; } = "";
+    private bool isSelectedd { get; set; } = true;
 
     protected override void OnInitialized()
     {
@@ -53,9 +56,22 @@
             });
     }
 
+    protected void ShowNameOfSelectedProduct(string name)
+    {
+
+        SelectedProduct = name;
+
+
+    }
+    protected void UnClick()
+    {
+        isSelectedd = false;
+    }
     protected void FavoriteCountUpdate(bool isSelected)
     {
-        if(isSelected){
+        isSelected = isSelectedd;
+        if (isSelected)
+        {
             SelectedFavouriteCount++;
         }
         else

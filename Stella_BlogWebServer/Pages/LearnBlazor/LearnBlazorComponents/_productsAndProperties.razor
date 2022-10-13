@@ -1,24 +1,32 @@
-﻿<h4 class="text-secondary">Product - @Product.Id</h4>
-<input type="checkbox" @onchange="FavoriteUpdated" /> Add to Favorite
-<br />
-<br />
-    
-<br />
-Name - @Product.Name<br/>
-            Show Properties:
-<input type="checkbox"  @bind="@Product.IsActive" />
-@if (Product.IsActive)
-{
-    @foreach (var propert in Product.ProductProperties)
-    {
+﻿
+<div class="col-5 border p-2 bg-light" style="border:dashed;border:solid;background-color:lightgray;border-color:lightskyblue" @onclick="(arghs)=>ChangeNameOnClick(arghs,Product.Name)">
+    <div style="margin-block:0.2%;">
+
+
+        <h4 class="text-secondary">Product - @Product.Id</h4>
+        <input type="checkbox" @onchange="FavoriteUpdated" /> Add to Favorite
+        <br />
+        <br />
+
+        <br />
+        Name - @Product.Name<br />
+        Show Properties:
+        <input type="checkbox" @bind="@Product.IsActive" />
+        @if (Product.IsActive)
+        {
+            @foreach (var propert in Product.ProductProperties)
+            {
+                <div>
+                    @propert.Key -  @propert.Value<br /><br />
+                </div>
+            }
+        }
         <div>
-            @propert.Key -  @propert.Value<br /><br />
+            <_EditDeleteButton IsActive="@Product.IsActive"></_EditDeleteButton>
         </div>
-    }
-}
-<div>
-    <_EditDeleteButton IsActive="@Product.IsActive"></_EditDeleteButton>
+    </div>
 </div>
+
 @code {
     [Parameter]
     public Demo_Product Product { get; set; }
@@ -26,8 +34,18 @@ Name - @Product.Name<br/>
     [Parameter]
     public EventCallback<bool> OnFavoriteUpdated { get; set; }
 
+    [Parameter]
+    public EventCallback<string> OnLastSelectedProductChange { get; set; }
+
     private async Task FavoriteUpdated(ChangeEventArgs e)
     {
         await OnFavoriteUpdated.InvokeAsync((bool)e.Value);
     }
+
+    private async Task ChangeNameOnClick(MouseEventArgs e, string name)
+    {
+        await OnLastSelectedProductChange.InvokeAsync(name);
+    }
+
+
 }
