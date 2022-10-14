@@ -1,17 +1,40 @@
-﻿
+﻿@{
+    object value = null;
+    bool hasValue = InputAttributes.TryGetValue("maxlength", out value);
+
+}
 
 <h1 class="text-primary pt-3">Playing around with components</h1>
-<h5>Max Length is 5</h5>
-<input id="name" placeholder="@Placeholder2" maxlength="@MaxLength"/>
+@if(hasValue){
+    <h5>Max Length is @value</h5>
+}else{
+    <h5>Max Length is 0</h5>
+}
+<input id="name" @attributes="InputAnyAttributeGivenFromParent" />
 
 
 
 @code {
-    [Parameter]
-    public string Placeholder2 { get; set; }
+    //[Parameter]
+    //public string Placeholder2 { get; set; }
+
+    //[Parameter]
+    //public int MaxLength { get; set; } = 5;
+
+    //[Parameter]
+    //public string Required { get; set; } = "required";
 
     [Parameter]
-    public int MaxLength { get; set; } = 5;
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>()
+    { 
+        {"required","required"},
+        {"placeholder","new Dictionary Attributes"},
+        {"maxlength", 6}
+    };
+
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<string, object> InputAnyAttributeGivenFromParent { get; set; } = new Dictionary<string, object>();
+
 }
 
 
