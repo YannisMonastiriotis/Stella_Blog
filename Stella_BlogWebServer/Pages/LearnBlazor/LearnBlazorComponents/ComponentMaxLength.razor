@@ -1,0 +1,17 @@
+﻿
+
+<h1 class="text-primary pt-3">Playing around with components</h1>
+<h5>Max Length is 5</h5>
+<input id="name" placeholder="@Placeholder2" maxlength="@MaxLength"/>
+
+
+
+@code {
+    [Parameter]
+    public string Placeholder2 { get; set; }
+
+    [Parameter]
+    public int MaxLength { get; set; } = 5;
+}
+
+

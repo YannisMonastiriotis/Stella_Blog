@@ -12,6 +12,25 @@
         Name - @Product.Name<br />
         Show Properties:
         <input type="checkbox" @bind="@Product.IsActive" />
+           <p>RF from parent -
+        @if(One ==null){
+            @One
+        }
+        else
+        {
+                <i>#1</i>
+        }
+        &nbsp
+        @if(Two ==null)
+        {
+            @Two
+        }
+        else
+        {
+                <i>#2</i>
+        }
+          </p>
+
         @if (Product.IsActive)
         {
             @foreach (var propert in Product.ProductProperties)
@@ -46,6 +65,11 @@
     {
         await OnLastSelectedProductChange.InvokeAsync(name);
     }
+    [Parameter]
 
+    public RenderFragment One { get; set; }
+    [Parameter]
+
+    public RenderFragment Two { get; set; }
 
 }

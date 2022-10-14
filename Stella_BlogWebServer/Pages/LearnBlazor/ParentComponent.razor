@@ -2,10 +2,22 @@
 
 <h3>Parent Child Relation</h3>
 
- <_ChildComponent Title="This title is passed as parameter from Parent Component">
-            We are doing it with blazor YAY!!
- </_ChildComponent>
+<_ChildComponent OnButtonClick="ShowMessage" Title="This title is passed as parameter from Parent Component" Placeholder="Hello">
+    <ChildContent>  We are doing it with blazor YAY!!</ChildContent>
+</_ChildComponent>
 
+ <p><b>@messageText</b></p>
+ <ComponentMaxLength Placeholder2="Hello from max length component"></ComponentMaxLength>
+ 
+@*<_ChildComponent Title="Title 2">
+   
+</_ChildComponent>*@
 @code {
+    public string messageText = "";
+
+    private void ShowMessage()
+    {
+        messageText = "Stellas button click from child component";
+    }
 
 }
