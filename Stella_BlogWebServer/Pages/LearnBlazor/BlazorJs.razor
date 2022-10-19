@@ -7,15 +7,23 @@
 <div class="row">
     <button class="btn btn-secondary" hidden="@IsShown" @onclick="TestConfirmBox">Test Confirm Button</button>
 </div>
+<div class="row">
+    <button class="btn btn-success"  @onclick="ToastrSuccess">Toastr Success</button>
+    <button class="btn btn-danger" @onclick="ToastrFailure">Toastr Failure</button>
+    
+</div>
 
 <div class="row">
     @if(isClicked)
     {
+        
         <p>Confirmation has been made!</p>
+           
     }
     else
     {
         <p>Confirmation pending!</p>
+      
     }
 </div>
 
@@ -25,7 +33,18 @@
     public bool IsShown { get; set; } = false;
     private async Task TestConfirmBox()
     {
-        IsShown = !IsShown;
+        IsShown = true;
         isClicked = await _JsRuntime.InvokeAsync<bool>("confirm", ConfirmMessage);
+    }
+
+    private async Task ToastrSuccess()
+    {
+        //IsShown = !IsShown;
+        await _JsRuntime.ToastrSuccess("Operation Successful");
+    }
+    private async Task ToastrFailure()
+    {
+        //IsShown = !IsShown;
+        await _JsRuntime.ToastrError("Operation Failed");
     }
 }
