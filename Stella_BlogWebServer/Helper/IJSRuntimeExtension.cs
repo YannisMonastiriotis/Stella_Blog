@@ -13,5 +13,17 @@ namespace Stella_BlogWebServer.Helper
         {
             await JsRuntime.InvokeVoidAsync("ShowToastr", "error", message);
         }
+        public static async ValueTask SweetAlertSuccess(this IJSRuntime JsRuntime, string message)
+        {
+            await JsRuntime.InvokeVoidAsync("ShowSwal", "success", message);
+        }
+
+        public static async ValueTask SweetAlertError(this IJSRuntime JsRuntime, string message)
+        {
+            await JsRuntime.InvokeVoidAsync("ShowSwal", "error", message);
+        }
+
+
+
     }
 }

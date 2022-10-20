@@ -14,6 +14,11 @@
 </div>
 
 <div class="row">
+    <button class="btn btn-success" @onclick="SweetAlertSuccess">Sweet Alert Success</button>
+    <button class="btn btn-danger" @onclick="SweetAlertError">Sweet Alert Failure</button>
+
+</div>
+<div class="row">
     @if(isClicked)
     {
         
@@ -46,5 +51,16 @@
     {
         //IsShown = !IsShown;
         await _JsRuntime.ToastrError("Operation Failed");
+
+    }
+    private async Task SweetAlertSuccess()
+    {
+        //IsShown = !IsShown;
+        await _JsRuntime.SweetAlertSuccess("We did it!");
+    }
+    private async Task SweetAlertError()
+    {
+        //IsShown = !IsShown;
+        await _JsRuntime.SweetAlertError("Oh noezz!!!");
     }
 }

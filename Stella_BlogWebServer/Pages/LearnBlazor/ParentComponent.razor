@@ -3,7 +3,7 @@
 <h3>Parent Child Relation</h3>
 <CascadingValue Value="@MessageForGrandChild" Name="message">
     <CascadingValue Value="@LuckyNumber" Name="luckynumber">
-<_ChildComponent OnButtonClick="ShowMessage" Title="This title is passed as parameter from Parent Component" Placeholder="Hello">
+<_ChildComponent @ref="childComp" OnButtonClick="ShowMessage" Title="This title is passed as parameter from Parent Component" Placeholder="Hello">
     <ChildContent>  We are doing it with blazor YAY!!</ChildContent>
 </_ChildComponent>
     </CascadingValue>
@@ -11,10 +11,15 @@
  <p><b>@messageText</b></p>
  <ComponentMaxLength hidden="true"></ComponentMaxLength>
 
+ <div class="row">
+     <button class="btn btn-success" @onclick="()=>childComp.ToastrSuccess()">Show SweetAlert</button>
+ </div>
 @*<_ChildComponent Title="Title 2">
    
 </_ChildComponent>*@
 @code {
+    private _ChildComponent? childComp;
+
     public string MessageForGrandChild = "This message is from your grand parent (ParentComponent)";
     public int LuckyNumber = 7;
     public string messageText = "";

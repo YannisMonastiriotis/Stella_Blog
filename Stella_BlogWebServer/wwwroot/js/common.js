@@ -5,4 +5,6 @@
     if (type==="error") {
         toastr.error(message, "Operation Failed", { timeOut: 5000 });
     }
+
+
 }

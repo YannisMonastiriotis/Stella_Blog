@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CurrieTechnologies.Blazor.SweetAlert2" Version="0.3.0-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Stell_Blog_Models\Stell_Blog_Models.csproj" />
   </ItemGroup>
 
