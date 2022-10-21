@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stella_Blog_Business.Repository
 {
-    internal interface IRepository
+    public interface IRepository
     {
     }
 }
