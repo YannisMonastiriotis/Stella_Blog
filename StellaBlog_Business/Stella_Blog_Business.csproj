@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stella_Blog_DataAccess\Stella_Blog_DataAccess.csproj" />
+    <ProjectReference Include="..\Stell_Blog_Models\Stell_Blog_Models.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Stella_Blog_Business.Repository;
+using Stella_Blog_DataAccess.Data;
 using Stella_BlogWebServer.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="CurrieTechnologies.Blazor.SweetAlert2" Version="0.3.0-preview" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StellaBlog_Business\Stella_Blog_Business.csproj" />
+    <ProjectReference Include="..\Stella_Blog_DataAccess\Stella_Blog_DataAccess.csproj" />
     <ProjectReference Include="..\Stell_Blog_Models\Stell_Blog_Models.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,7 @@
-﻿namespace Stell_Blog_Models
+﻿namespace StellaBlog_Business
 {
     public class Class1
     {
+
     }
 }
