@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_BlogWebClient", "Ste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stell_Blog_Models", "Stell_Blog_Models\Stell_Blog_Models.csproj", "{F1CA53E8-4CAA-4540-B83D-3AF17CADD263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stella_Blog_Business", "StellaBlog_Business\Stella_Blog_Business.csproj", "{1834F3A1-8DE6-49B9-BB0B-045FBF3255C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_Blog_Business", "StellaBlog_Business\Stella_Blog_Business.csproj", "{1834F3A1-8DE6-49B9-BB0B-045FBF3255C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stella_Blog_Common", "Stella_Blog_Common\Stella_Blog_Common.csproj", "{26885C62-C86C-4872-BFAC-86F44796F959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_Blog_Common", "Stella_Blog_Common\Stella_Blog_Common.csproj", "{26885C62-C86C-4872-BFAC-86F44796F959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stella_Blog_DataAccess", "Stella_Blog_DataAccess\Stella_Blog_DataAccess.csproj", "{F319635D-B395-4821-ADD7-63844668FC8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stella_Blog_DataAccess", "Stella_Blog_DataAccess\Stella_Blog_DataAccess.csproj", "{F319635D-B395-4821-ADD7-63844668FC8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
