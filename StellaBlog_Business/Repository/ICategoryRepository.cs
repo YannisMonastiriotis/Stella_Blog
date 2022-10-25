@@ -10,11 +10,11 @@ namespace Stella_Blog_Business.Repository
 {
     public interface ICategoryRepository
     {
-        public CategoryDTO Create(CategoryDTO objdto);
-        public CategoryDTO Update(CategoryDTO objdto);
-        public int Delete(int id);
-        public CategoryDTO Get(int id);
-        public IEnumerable<CategoryDTO> GetAll();
+        public Task<CategoryDTO> Create(CategoryDTO objdto);
+        public Task<CategoryDTO> Update(CategoryDTO objdto);
+        public Task<int> Delete(int id);
+        public Task<CategoryDTO> Get(int id);
+        public Task<IEnumerable<CategoryDTO>> GetAll();
 
        
     }
